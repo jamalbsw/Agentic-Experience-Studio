@@ -7,11 +7,11 @@
 <meta name="description" content="AXD Studio is a shared workspace for human-centered product design, AI experiences, and the practices that help teams do their best work.">
 <title>AXD Studio</title>
 <style>
-:root { color-scheme: dark; --bg:#050F18; --surface:#0A1D2B; --surface-raised:#0E2638; --line:rgba(143,211,240,.18); --ink:#EEF7FB; --muted:#AFC2CC; --blue:#007EB4; --sky:#8FD3F0; --accent:#D8A5FF; }
+:root { color-scheme: dark; --bg:#030D1C; --surface:#0A2139; --surface-raised:#133B5B; --line:rgba(129,191,223,.16); --ink:#FFFFFF; --muted:#B9EAF5; --blue:#4881AA; --sky:#81BFDF; --accent:#4881AA; --warm-primary:#C7836F; --warm-secondary:#A75F55; --cyan-glow:#B9EAF5; --navy-dark:#030D1C; }
 * { box-sizing: border-box; }
 html { min-height: 100%; background: var(--bg); }
-body { position: relative; isolation: isolate; min-height: 100vh; margin: 0; overflow-x: hidden; background: radial-gradient(ellipse at 14% 12%, rgba(0,126,180,.2), transparent 34%), radial-gradient(ellipse at 88% 78%, rgba(63,180,230,.09), transparent 36%), var(--bg); color: var(--ink); font-family: "Red Hat Text", "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-body::before { position: fixed; z-index: -1; inset: 0; content: ""; pointer-events: none; background-image: linear-gradient(rgba(143,211,240,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(143,211,240,.035) 1px, transparent 1px); background-size: 44px 44px; mask-image: linear-gradient(115deg, #000 0%, transparent 76%); }
+body { position: relative; isolation: isolate; min-height: 100vh; margin: 0; overflow-x: hidden; background: radial-gradient(ellipse at 14% 12%, rgba(72,129,170,.15), transparent 34%), radial-gradient(ellipse at 88% 78%, rgba(129,191,223,.08), transparent 36%), var(--bg); color: var(--ink); font-family: "Red Hat Text", "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+body::before { position: fixed; z-index: -1; inset: 0; content: ""; pointer-events: none; background-image: linear-gradient(rgba(129,191,223,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(129,191,223,.025) 1px, transparent 1px); background-size: 44px 44px; mask-image: linear-gradient(115deg, #000 0%, transparent 76%); }
 .shell { width: min(1120px, 100%); min-height: 100vh; margin: 0 auto; padding: clamp(24px, 5vw, 64px) max(20px, env(safe-area-inset-right, 0px)) clamp(24px, 5vw, 64px) max(20px, env(safe-area-inset-left, 0px)); display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr); align-items: center; gap: clamp(36px, 7vw, 92px); }
 .welcome { max-width: 620px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; margin-bottom: clamp(48px, 8vh, 84px); color: var(--ink); font-family: "Red Hat Display", "Segoe UI", system-ui, sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: .04em; text-decoration: none; }
@@ -22,7 +22,7 @@ body::before { position: fixed; z-index: -1; inset: 0; content: ""; pointer-even
 .welcome h1 { max-width: 12ch; margin: 0; font: 700 clamp(2.7rem, 6vw, 5rem)/.99 "Red Hat Display", "Segoe UI", system-ui, sans-serif; letter-spacing: -.055em; }
 .welcome h1 em { color: var(--sky); font-style: normal; }
 .lede { max-width: 54ch; margin: 24px 0 0; color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.12rem); line-height: 1.75; }
-.card { width: 100%; padding: clamp(24px, 4vw, 38px); border: 1px solid rgba(143,211,240,.2); border-radius: 22px; background: linear-gradient(145deg, rgba(14,38,56,.96), rgba(7,23,35,.98)); box-shadow: 0 24px 80px -32px rgba(0,0,0,.8), 0 0 0 1px rgba(0,126,180,.06); }
+.card { width: 100%; padding: clamp(24px, 4vw, 38px); border: 1px solid rgba(129,191,223,.18); border-radius: 22px; background: linear-gradient(145deg, rgba(10,33,57,.88), rgba(5,18,36,.92)); backdrop-filter: blur(8px); box-shadow: 0 24px 80px -32px rgba(0,0,0,.85), 0 0 0 1px rgba(72,129,170,.08), inset 0 1px 1px rgba(185,234,245,.04); }
 .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 40px; }
 .access { display: inline-flex; align-items: center; gap: 9px; color: var(--accent); font: 500 .68rem/1 "Red Hat Mono", ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; }
 .access::before { width: 7px; height: 7px; border-radius: 50%; background: #5CBF86; box-shadow: 0 0 12px rgba(92,191,134,.55); content: ""; }
@@ -32,16 +32,16 @@ body::before { position: fixed; z-index: -1; inset: 0; content: ""; pointer-even
 form { display: grid; gap: 13px; }
 p { margin: 0; }
 label.f { color: var(--accent); font-size: .83rem; font-weight: 600; }
-input[type=password] { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid rgba(143,211,240,.24); border-radius: 10px; background: #061520; color: var(--ink); font: inherit; }
-input[type=password]:focus { outline: 2px solid var(--sky); outline-offset: 2px; border-color: var(--sky); }
+input[type=password] { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid rgba(129,191,223,.2); border-radius: 10px; background: rgba(10,33,57,.56); color: var(--ink); font: inherit; backdrop-filter: blur(4px); transition: all .2s; }
+input[type=password]:focus { outline: 2px solid var(--cyan-glow); outline-offset: 2px; border-color: var(--cyan-glow); background: rgba(10,33,57,.72); box-shadow: 0 0 16px rgba(129,191,223,.2); }
 .rem { display: flex; gap: 9px; align-items: center; margin: 2px 0 6px; color: var(--muted); font-size: .78rem; line-height: 1.4; }
 .rem input { width: 16px; height: 16px; margin: 0; accent-color: var(--blue); }
-button { min-height: 48px; padding: 12px 18px; border: 1px solid #168AB9; border-radius: 10px; background: var(--blue); color: #fff; font: 600 .92rem "Red Hat Text", "Segoe UI", system-ui, sans-serif; cursor: pointer; transition: background-color .16s, transform .16s; }
-button:hover { transform: translateY(-1px); background: #0A8EC5; }
-button:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; }
+button { min-height: 48px; padding: 12px 18px; border: 1px solid rgba(199,131,111,.3); border-radius: 10px; background: linear-gradient(135deg, #4881AA, #3A6B8F); color: #fff; font: 600 .92rem "Red Hat Text", "Segoe UI", system-ui, sans-serif; cursor: pointer; transition: all .16s; box-shadow: 0 8px 24px -8px rgba(72,129,170,.24); }
+button:hover { transform: translateY(-2px); background: linear-gradient(135deg, #5191B8, #4675A0); box-shadow: 0 12px 32px -8px rgba(72,129,170,.32); }
+button:focus-visible { outline: 2px solid var(--cyan-glow); outline-offset: 3px; }
 button[disabled] { opacity: .6; cursor: progress; }
 .err { min-height: 1.2em; color: #FFB4AB; font-size: .82rem; line-height: 1.45; }
-.keep2 { background: linear-gradient(145deg, rgba(14,38,56,.96), rgba(7,23,35,.98)); color: var(--ink); border: 1px solid rgba(143,211,240,.2); border-radius: 22px; padding: 24px; box-shadow: 0 24px 80px -32px rgba(0,0,0,.8), 0 0 0 1px rgba(0,126,180,.06); }
+.keep2 { background: linear-gradient(145deg, rgba(10,33,57,.88), rgba(5,18,36,.92)); color: var(--ink); border: 1px solid rgba(129,191,223,.18); border-radius: 22px; padding: 24px; box-shadow: 0 24px 80px -32px rgba(0,0,0,.85), 0 0 0 1px rgba(72,129,170,.08), inset 0 1px 1px rgba(185,234,245,.04); backdrop-filter: blur(8px); }
 .keep2-title { color: var(--accent); font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; }
 .keep2-text { color: var(--muted); font-size: .95rem; line-height: 1.6; }
 @media (max-width: 760px) { .shell { max-width: 600px; grid-template-columns: 1fr; gap: 36px; align-content: center; } .brand { margin-bottom: 42px; } .welcome h1 { max-width: 13ch; font-size: clamp(2.5rem, 12vw, 4rem); } .lede { margin-top: 16px; } .card-top { margin-bottom: 28px; } }
