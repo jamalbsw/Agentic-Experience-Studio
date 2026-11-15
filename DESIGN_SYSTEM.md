@@ -1,5 +1,35 @@
 # AXD Studio Design System & Guidelines
 
+## 🚨 CRITICAL RULES - READ FIRST
+
+### ⚠️ ZERO-TOLERANCE ENFORCEMENT
+
+**IF YOU ADD A WHITE BORDER TO A CARD, IT WILL BE REJECTED IN CODE REVIEW.**
+
+| Rule | Status | Why |
+|------|--------|-----|
+| **NO WHITE BORDERS (#fff)** | ❌ STRICTLY FORBIDDEN | Breaks elegant design, looks harsh and unprofessional |
+| **ALL card borders MUST be rgba(143,211,240,.2)** | ✅ MANDATORY | Subtle, sophisticated, maintains visual hierarchy |
+| **Accent color is #D8A5FF (vibrant purple)** | ✅ MANDATORY | Replaces old orange; all UI elements must reflect this |
+| **All colors via CSS variables** | ✅ MANDATORY | Prevents inconsistency; no hardcoded hex in elements |
+| **Border-radius for cards must be 22px** | ✅ MANDATORY | Establishes visual consistency and elegance |
+
+### Pre-Commit Validation
+Run before every commit:
+```bash
+./.pre-commit-check.sh
+```
+This checks:
+- ❌ Zero white borders
+- ✅ Card borders are `rgba(143,211,240,.2)`
+- ✅ Accent color is `#D8A5FF`
+- ✅ All colors use variables
+- ✅ Border-radius consistent
+
+**COMMIT WILL FAIL if checks don't pass.** Fix the errors and try again.
+
+---
+
 ## Overview
 This document establishes design rules, layout standards, and styling guidelines to ensure consistency and elegance across all AXD interfaces. All components, pages, and features must adhere to these standards.
 
