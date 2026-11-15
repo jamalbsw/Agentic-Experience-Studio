@@ -1,0 +1,589 @@
+/**
+ * AXD Design System - Component Library
+ * Copy these patterns into your stylesheets
+ * See DESIGN_SYSTEM.md for complete guidelines
+ */
+
+/* ============================================
+   1. CSS VARIABLES (must be in :root)
+   ============================================ */
+
+:root {
+  /* Colors */
+  --bg: #050F18;
+  --surface: #0A1D2B;
+  --surface-raised: #0E2638;
+  --line: rgba(143, 211, 240, 0.18);
+  --ink: #EEF7FB;
+  --muted: #AFC2CC;
+  --blue: #007EB4;
+  --sky: #8FD3F0;
+  --accent: #D8A5FF;  /* Vibrant light purple */
+
+  /* Shadows */
+  --shadow-card: 0 24px 80px -32px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 126, 180, 0.06);
+  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  /* Borders */
+  --border-light: 1px solid rgba(143, 211, 240, 0.2);
+  --border-interactive: 1px solid rgba(143, 211, 240, 0.24);
+
+  /* Spacing (4px scale) */
+  --gap-xs: 4px;
+  --gap-sm: 8px;
+  --gap-md: 12px;
+  --gap-lg: 16px;
+  --gap-xl: 24px;
+  --gap-2xl: 32px;
+  --gap-3xl: 40px;
+  --gap-4xl: 48px;
+}
+
+/* ============================================
+   2. TYPOGRAPHY BASE
+   ============================================ */
+
+body {
+  color: var(--ink);
+  font-family: "Red Hat Text", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Red Hat Display", "Segoe UI", system-ui, sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 0.99;
+  letter-spacing: -0.055em;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--accent);
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
+/* Body Text */
+p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+p.large {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+p.small {
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* ============================================
+   3. CARD COMPONENTS
+   ============================================ */
+
+.card {
+  width: 100%;
+  padding: clamp(24px, 4vw, 38px);
+  border: var(--border-light);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(14, 38, 56, 0.96), rgba(7, 23, 35, 0.98));
+  box-shadow: var(--shadow-card);
+}
+
+.card + .card {
+  margin-top: var(--gap-2xl);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-md);
+  margin-bottom: var(--gap-3xl);
+}
+
+.card-title {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-weight: 650;
+  color: var(--accent);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin: 0 0 var(--gap-md) 0;
+}
+
+.card-text {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.card-copy {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: var(--gap-md) 0 var(--gap-xl) 0;
+}
+
+/* Variant: Keep2 (Ways of Working) */
+.keep2 {
+  background: linear-gradient(145deg, rgba(14, 38, 56, 0.96), rgba(7, 23, 35, 0.98));
+  color: var(--ink);
+  border: var(--border-light);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.keep2-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: var(--gap-md);
+  line-height: 1.4;
+}
+
+.keep2-text {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================
+   4. BUTTONS
+   ============================================ */
+
+button {
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid #168AB9;
+  border-radius: 10px;
+  background: var(--blue);
+  color: #fff;
+  font-family: "Red Hat Text", "Segoe UI", system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.16s, transform 0.16s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: #0A8EC5;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 3px;
+  border-color: var(--sky);
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+button.secondary {
+  background: transparent;
+  border: var(--border-light);
+  color: var(--sky);
+}
+
+button.secondary:hover {
+  background: rgba(143, 211, 240, 0.1);
+}
+
+/* ============================================
+   5. FORM ELEMENTS
+   ============================================ */
+
+label {
+  display: block;
+  color: var(--accent);
+  font-size: 0.83rem;
+  font-weight: 600;
+  margin-bottom: var(--gap-sm);
+  line-height: 1.4;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: var(--border-interactive);
+  border-radius: 10px;
+  background: #061520;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.92rem;
+  transition: border-color 0.16s, background-color 0.16s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--sky);
+  outline-offset: 2px;
+  border-color: var(--sky);
+  background: #0A1D2B;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: var(--gap-xl);
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+/* Checkbox/Radio */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+
+.form-check {
+  display: flex;
+  gap: var(--gap-md);
+  align-items: center;
+  margin: var(--gap-md) 0 var(--gap-sm) 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+/* ============================================
+   6. ERROR & VALIDATION
+   ============================================ */
+
+.err,
+.error-message {
+  min-height: 1.2em;
+  color: #FFB4AB;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin-top: var(--gap-sm);
+  display: block;
+}
+
+input[aria-invalid="true"] {
+  border-color: #FFB4AB;
+}
+
+input[aria-invalid="true"]:focus {
+  outline-color: #FFB4AB;
+  border-color: #FFB4AB;
+}
+
+/* ============================================
+   7. BADGES & TAGS
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-xs);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.badge.primary {
+  background: rgba(0, 126, 180, 0.2);
+  color: var(--sky);
+  border: 1px solid rgba(0, 126, 180, 0.3);
+}
+
+.badge.accent {
+  background: rgba(255, 165, 0, 0.2);
+  color: var(--accent);
+  border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+/* Status Indicator */
+.status-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-indicator.active {
+  background: #5CBF86;
+  box-shadow: 0 0 12px rgba(92, 191, 134, 0.55);
+}
+
+/* ============================================
+   8. LAYOUT CONTAINERS
+   ============================================ */
+
+.shell {
+  width: min(1120px, 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 64px) max(20px, env(safe-area-inset-right, 0px))
+    clamp(24px, 5vw, 64px) max(20px, env(safe-area-inset-left, 0px));
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+  align-items: center;
+  gap: clamp(36px, 7vw, 92px);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap-xl);
+}
+
+.grid.cols-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid.cols-3 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap-lg);
+  align-items: center;
+}
+
+.flex.column {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ============================================
+   9. UTILITY CLASSES
+   ============================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-error {
+  color: #FFB4AB;
+}
+
+.mt-xs {
+  margin-top: var(--gap-xs);
+}
+.mt-sm {
+  margin-top: var(--gap-sm);
+}
+.mt-md {
+  margin-top: var(--gap-md);
+}
+.mt-lg {
+  margin-top: var(--gap-lg);
+}
+.mt-xl {
+  margin-top: var(--gap-xl);
+}
+
+.mb-xs {
+  margin-bottom: var(--gap-xs);
+}
+.mb-sm {
+  margin-bottom: var(--gap-sm);
+}
+.mb-md {
+  margin-bottom: var(--gap-md);
+}
+.mb-lg {
+  margin-bottom: var(--gap-lg);
+}
+.mb-xl {
+  margin-bottom: var(--gap-xl);
+}
+
+.gap-sm {
+  gap: var(--gap-sm);
+}
+.gap-md {
+  gap: var(--gap-md);
+}
+.gap-lg {
+  gap: var(--gap-lg);
+}
+.gap-xl {
+  gap: var(--gap-xl);
+}
+
+/* ============================================
+   10. RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet (760px and below) */
+@media (max-width: 760px) {
+  .shell {
+    max-width: 600px;
+    grid-template-columns: 1fr;
+    gap: var(--gap-3xl);
+    align-content: center;
+  }
+
+  h1 {
+    max-width: 13ch;
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .card {
+    padding: var(--gap-xl);
+  }
+
+  .grid.cols-2,
+  .grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile (420px and below) */
+@media (max-width: 420px) {
+  .shell {
+    padding: var(--gap-2xl);
+    gap: var(--gap-2xl);
+  }
+
+  .card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .grid {
+    gap: var(--gap-md);
+  }
+}
+
+/* ============================================
+   11. ACCESSIBILITY
+   ============================================ */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-to-main:focus {
+  top: 0;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  input,
+  button,
+  .card {
+    border-width: 2px;
+  }
+
+  body {
+    font-weight: 500;
+  }
+}
+
+/* ============================================
+   12. DARK MODE ADJUSTMENTS
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  /* Already dark by default, no changes needed */
+}
+
+/* ============================================
+   13. PRINT STYLES
+   ============================================ */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  button {
+    border: 1px solid #000;
+  }
+}
